@@ -10,5 +10,5 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table(name = "Product")
-public class ProductEntity extends AbstractService {
+public class ProductEntity extends BaseServiceEntity {
 }

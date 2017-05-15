@@ -6,7 +6,7 @@ import javax.persistence.*;
  * @author bitreight
  */
 @MappedSuperclass
-public abstract class AbstractService {
+public abstract class BaseServiceEntity {
 
     @Id @GeneratedValue
     @Column(name = "ID")

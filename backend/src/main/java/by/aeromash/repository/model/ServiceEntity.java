@@ -8,5 +8,5 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "Service")
-public class ServiceEntity extends AbstractService {
+public class ServiceEntity extends BaseServiceEntity {
 }
