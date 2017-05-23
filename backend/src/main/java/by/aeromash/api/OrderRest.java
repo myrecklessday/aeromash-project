@@ -10,6 +10,7 @@ import by.aeromash.repository.model.ProductEntity;
 import by.aeromash.repository.model.ProductOrderEntity;
 import by.aeromash.repository.model.ServiceEntity;
 import by.aeromash.repository.model.ServiceOrderEntity;
+import by.aeromash.service.OrderMailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -32,6 +33,8 @@ public class OrderRest {
     @Autowired
     private OrderRepository<ServiceOrderEntity> serviceOrderRepository;
     @Autowired
+    private OrderMailService orderMailService;
+    @Autowired
     private OrderMapper orderMapper;
 
     @PostMapping("/product")
@@ -40,7 +43,8 @@ public class OrderRest {
         ProductOrderEntity productOrder = orderMapper.toProductOrderEntity(order);
         productOrder.setProduct(product);
 
-        productOrderRepository.save(productOrder);
+        ProductOrderEntity createdOrder = productOrderRepository.save(productOrder);
+        orderMailService.sendOrderMail(createdOrder);
     }
 
     @PostMapping("/service")
@@ -49,6 +53,7 @@ public class OrderRest {
         ServiceOrderEntity serviceOrder = orderMapper.toServiceOrderEntity(order);
         serviceOrder.setService(service);
 
-        serviceOrderRepository.save(serviceOrder);
+        ServiceOrderEntity createdOrder = serviceOrderRepository.save(serviceOrder);
+        orderMailService.sendOrderMail(createdOrder);
     }
 }

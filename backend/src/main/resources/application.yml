@@ -8,6 +8,25 @@ spring:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
   datasource:
-    url: jdbc:mysql://localhost:3306/aeromash_db?serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/aeromash_db?serverTimezone=UTC #change to yours
     username: root
     password: root
+
+  #gmail settings
+  mail:
+      host: smtp.gmail.com
+      port: 587
+      username: <set email>  #change to yours
+      password: <password>   #change to yours
+      properties:
+        mail:
+          smtp:
+            auth: true
+            starttls:
+              enable: true
+
+mail:
+  default:
+    from: <set email>  #change to yours
+    to: <set email>
+    subject: Новый заказ
