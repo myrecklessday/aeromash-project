@@ -1,6 +1,8 @@
 package by.aeromash.repository.model;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -8,6 +10,8 @@ import javax.persistence.*;
  * @author bitreight
  */
 @Data
+@EqualsAndHashCode(exclude = "id")
+@ToString
 @Entity
 @Table(name = "Category")
 public class CategoryEntity {

@@ -11,7 +11,7 @@ import javax.persistence.*;
  */
 @Data
 @EqualsAndHashCode(callSuper = true, exclude = "product")
-@ToString(callSuper = true, exclude = "product")
+@ToString(callSuper = true)
 @Entity
 @DiscriminatorValue("PRODUCT")
 public class ProductOrderEntity extends OrderEntity {

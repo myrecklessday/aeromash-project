@@ -1,10 +1,17 @@
 package by.aeromash.repository.model;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
 import javax.persistence.*;
 
 /**
  * @author bitreight
  */
+@Data
+@EqualsAndHashCode(exclude = {"id", "imageLink"})
+@ToString
 @MappedSuperclass
 public abstract class BaseServiceEntity {
 

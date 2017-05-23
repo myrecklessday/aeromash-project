@@ -10,8 +10,8 @@ import javax.persistence.*;
  * @author bitreight
  */
 @Data
-@EqualsAndHashCode(exclude = "imageLink")
-@ToString(exclude = "imageLink")
+@EqualsAndHashCode(exclude = {"id", "imageLink"})
+@ToString
 @Entity
 @Table(name = "Management")
 public class ManagementEntity {

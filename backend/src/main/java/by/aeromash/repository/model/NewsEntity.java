@@ -11,8 +11,8 @@ import java.sql.Date;
  * @author bitreight
  */
 @Data
-@EqualsAndHashCode(exclude = "imageLink")
-@ToString(exclude = "imageLink")
+@EqualsAndHashCode(exclude = {"id", "imageLink"})
+@ToString
 @Entity
 @Table(name = "News")
 public class NewsEntity {

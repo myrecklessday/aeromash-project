@@ -11,7 +11,7 @@ import javax.persistence.*;
  */
 @Data
 @EqualsAndHashCode(callSuper = true, exclude = "service")
-@ToString(callSuper = true, exclude = "service")
+@ToString(callSuper = true)
 @Entity
 @DiscriminatorValue("SERVICE")
 public class ServiceOrderEntity extends OrderEntity {
